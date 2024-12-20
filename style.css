@@ -6,13 +6,14 @@
 body{
     margin: 0;
     font-family: Poppins;
+    background-color: rgb(255, 243, 222);
 }
 
 
 .navigation {
   height: 70px;
   background: #262626;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   top: 0;
   left: 0;
@@ -57,7 +58,7 @@ body{
 
 .banner-home{
     margin-top: 70px;
-    background: linear-gradient(90deg, rgba(255,163,0,1) 0%, rgba(255,184,0,1) 45%, rgba(255,248,0,1) 100%);;
+    background: linear-gradient(90deg, rgba(255,163,0,1) 0%, rgba(255,184,0,1) 45%, rgba(255,248,0,1) 100%);
 }
 
 .head-banner{
@@ -88,5 +89,44 @@ body{
     font-weight: 560;
     font-size: 1.1em;
     text-shadow: 3px 2px 2px rgba(0,0,0,0.15);
+}
+
+/*ARTICLES DE LOS PROYECTOS */
+
+.article-project{
+    display: flex;
+    justify-content: center;
+}
+
+.project-container{
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+.project-container h2{
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    margin: auto;
+
+}
+.project{
+    border: 3px solid orange;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    background-color: white;
+    box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.22);
+}
+.img-project{
+    width: 50%;
+    display: flex;
+    border-radius: 11px 0px 0px 0px;
+    box-shadow: 6px 0px 5px -3px rgba(0,0,0,0.1);
+}
+.project-text{
+    width: 50%;
+    padding-left: 1em;
+    text-align: justify;
+    padding-right: 4em;
 }
 
