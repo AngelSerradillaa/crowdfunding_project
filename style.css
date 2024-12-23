@@ -112,10 +112,12 @@ body{
 }
 .project{
     border: 3px solid orange;
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 0px 0px 0px;
     display: flex;
     background-color: white;
-    box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.22);
+    /*box-shadow: 7px 7px 5px -3px rgba(0,0,0,0.22);*/
+    box-shadow: 1px 1px 7px 7px rgba(0,0,0,0.1);
+    max-height: 500px;
 }
 .img-project{
     width: 50%;
@@ -126,7 +128,54 @@ body{
 .project-text{
     width: 50%;
     padding-left: 1em;
+    padding-bottom: 0.5em;
     text-align: justify;
     padding-right: 4em;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable both-edges;
+}
+
+.donation{
+    border: 3px solid orange;
+    border-top: 0px;
+    border-radius: 0px 0px 15px 15px;
+    background-color: white;
+    display: flex;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 7px 7px rgba(0,0,0,0.1);
+}
+.form-donation{
+    width: 100%;
+    display: flex;
+    gap: 20%;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+.personal-info{
+    width: 30%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.payment-info{
+    width: 20%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.payment-donation{
+    margin-top: 35px;
+    padding: 5px 2px;
+    max-width: 150px;
+}
+.btn-donation{
+    flex: 0 1 100%;
+    padding-top: 20px;
+}
+
+.footer{
+    background-color: #262626;
 }
 
