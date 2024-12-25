@@ -31,8 +31,9 @@ body{
 
 .navigation li:hover{
     text-decoration: underline;
-    color: aquamarine;
+    color: orange;
     cursor: pointer;
+    transition: all .5s;
 }
 
 .nav-container{
@@ -45,7 +46,9 @@ body{
     gap: 6vw;
 }
 
-
+.button-container{
+    margin-right: 15px;
+}
 
 .logo{
     padding-left: 12px;
@@ -111,7 +114,7 @@ body{
 
 }
 .project{
-    border: 3px solid orange;
+    
     border-radius: 15px 0px 0px 0px;
     display: flex;
     background-color: white;
@@ -137,7 +140,7 @@ body{
 }
 
 .donation{
-    border: 3px solid orange;
+    
     border-top: 0px;
     border-radius: 0px 0px 15px 15px;
     background-color: white;
@@ -173,9 +176,80 @@ body{
 .btn-donation{
     flex: 0 1 100%;
     padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.btn-donation input{
+    font-family: Poppins;
+    background-color: orange;
+    padding: 8px 8px;
+    border: none;
+    transition: all .5s;
+    border-radius: 5px;
+}
+
+.btn-donation input:hover{
+    background-color: #262626;
+    color: white;
+    cursor:pointer;
 }
 
 .footer{
     background-color: #262626;
+    margin-top: 20px;
 }
 
+.footer-container{
+    display: flex;
+    justify-items: center;
+    flex-wrap: wrap;
+    padding: 3% 2%;
+    gap: 50%;
+}
+
+.footer-title{
+    color: orange;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.25);
+    font-size: 1.5em;
+    margin: auto;
+}
+.footer-subtitle{
+    color: white;
+}
+
+.btn-black{
+    font-family: Poppins;
+    background-color: orange;
+    padding: 4px 8px;
+    border: none;
+    transition: all .5s;
+
+}
+.btn-black:hover{
+    background-color: white;
+    color: orange;
+    cursor:pointer;
+}
+
+.input-subs{
+    padding: 6.1px 0px;
+    padding-left: 6px;
+    float: left;
+    border: none;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-link{
+    color: white;
+    text-decoration: none;
+}
+.footer-link:hover{
+    color: orange;
+    text-decoration: underline;
+    transition: all .5s;
+}
