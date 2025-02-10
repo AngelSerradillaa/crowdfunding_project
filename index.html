@@ -73,8 +73,20 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="p-container">
+                        <div class="progress-container">    
+                            <div class="progress progress-striped">
+                              <div class="progress-bar" id="progress-bar1">
+                              </div>             
+                            </div> 
+                            <span class="progress-label">Dinero aportado:</span>
+                            <br>
+                            <span class="progress-amount" id="progress-text1">0€ / 1000€<span class="countup" data-end-value="1000000" data-duration="1200"></span>
+                            </span>
+                        </div>
+                    </div>
                     <div class="donation">
-                        <form action="" method="get" class="form-donation">
+                        <form action="" method="get" class="form-donation" id="form-donation1">
                             <div class="personal-info">
                                 <label for="name">Nombre: </label>
                                 <input type="text" name="name" class="name-donation" required>
@@ -85,7 +97,7 @@
                             </div>
                             <div class="payment-info">
                                 <label for="quantity">Cantidad a donar: </label>
-                                <input type="text" name="quantity" class="quantity-donation" required>
+                                <input type="text" name="quantity" class="quantity-donation1" id="quantity-donation1" required>
                                 <label for="payment">Método de pago: </label>
                                 <select name="payment" class="payment-donation">
                                     <option value="card">Tarjeta</option>
@@ -131,8 +143,20 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="p-container">
+                        <div class="progress-container">    
+                            <div class="progress progress-striped">
+                              <div class="progress-bar" id="progress-bar2">
+                              </div>             
+                            </div> 
+                            <span class="progress-label">Dinero aportado:</span>
+                            <br>
+                            <span class="progress-amount" id="progress-text2">0€ / 1000€<span class="countup" data-end-value="1000000" data-duration="1200"></span>
+                            </span>
+                        </div>
+                    </div>
                     <div class="donation">
-                        <form action="" method="get" class="form-donation">
+                        <form action="" method="get" class="form-donation" id="form-donation2">
                             <div class="personal-info">
                                 <label for="name">Nombre: </label>
                                 <input type="text" name="name" class="name-donation" required>
@@ -143,7 +167,7 @@
                             </div>
                             <div class="payment-info">
                                 <label for="quantity">Cantidad a donar: </label>
-                                <input type="text" name="quantity" class="quantity-donation" required>
+                                <input type="text" name="quantity" class="quantity-donation" id="quantity-donation2" required>
                                 <label for="payment">Método de pago: </label>
                                 <select name="payment" class="payment-donation">
                                     <option value="card">Tarjeta</option>
@@ -189,8 +213,20 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="p-container">
+                        <div class="progress-container">    
+                            <div class="progress progress-striped">
+                            <div class="progress-bar" id="progress-bar3">
+                            </div>             
+                            </div> 
+                            <span class="progress-label">Dinero aportado:</span>
+                            <br>
+                            <span class="progress-amount" id="progress-text3">0€ / 1000€<span class="countup" data-end-value="1000000" data-duration="1200"></span>
+                            </span>
+                        </div>
+                    </div>
                     <div class="donation">
-                        <form action="" method="get" class="form-donation">
+                        <form action="" method="get" class="form-donation" id="form-donation3">
                             <div class="personal-info">
                                 <label for="name">Nombre: </label>
                                 <input type="text" name="name" class="name-donation" required>
@@ -201,7 +237,7 @@
                             </div>
                             <div class="payment-info">
                                 <label for="quantity">Cantidad a donar: </label>
-                                <input type="text" name="quantity" class="quantity-donation" required>
+                                <input type="text" name="quantity" class="quantity-donation" id="quantity-donation3" required>
                                 <label for="payment">Método de pago: </label>
                                 <select name="payment" class="payment-donation">
                                     <option value="card">Tarjeta</option>
@@ -274,5 +310,7 @@
         </div>
     </footer>
     <script src="faq.js"></script>
+    <script src="progressbar.js"></script>
+
 </body>
 </html>
