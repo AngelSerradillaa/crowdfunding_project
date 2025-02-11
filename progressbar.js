@@ -30,39 +30,85 @@ function updateProgress(event) {
     form.reset();
 }*/
 
-document.querySelectorAll(".form-donation").forEach(form => {
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
+document.addEventListener("DOMContentLoaded", async function () {
+    async function loadProgressData() {
+        let projects;
 
-        // Obtener el número de identificación del formulario
-        const formId = this.id.replace("form-donation", ""); // Extrae el número (por ejemplo, "3")
+        // Intentar cargar desde localStorage
+        const storedData = localStorage.getItem("donationData");
+        console.log(storedData);
 
-        // Buscar elementos relacionados usando el ID
-        const progressText = document.getElementById(`progress-text${formId}`);
-        const progressBar = document.getElementById(`progress-bar${formId}`);
-        const input = document.getElementById(`quantity-donation${formId}`);
-        console.log(progressText, progressBar, input)
-
-        if (!progressText || !progressBar || !input) {
-            console.error(`No se encontraron elementos para la barra de progreso con ID: ${formId}`);
-            return;
+        if (storedData) {
+            projects = JSON.parse(storedData);
+            console.log("Cargando datos desde localStorage...");
+        } else {
+            try {
+                console.log("Cargando datos desde JSON...");
+                const response = await fetch("data.json"); // Carga los datos iniciales
+                projects = await response.json();
+                projects = projects.projects; // Acceder al array de proyectos
+                saveProgressData(projects); // Guardar en localStorage para futuras cargas
+            } catch (error) {
+                console.error("Error cargando los datos del JSON:", error);
+                return;
+            }
         }
 
-        // Obtener valores actuales del progreso
-        const progressTextValue = progressText.textContent.trim();
-        let [currentValue, maxValue] = progressTextValue.split("/").map(v => parseInt(v.replace("€", "").trim()));
-        let donationValue = parseInt(input.value);
+        // Renderizar los datos en la interfaz
+        projects.forEach(project => {
+            const progressText = document.getElementById(`progress-text${project.id}`);
+            const progressBar = document.getElementById(`progress-bar${project.id}`);
 
-        if (!isNaN(donationValue) && donationValue > 0) {
-            let newProgress = currentValue + donationValue;
-            progressText.textContent = `${newProgress}€ / ${maxValue}€`;
-            if (newProgress > maxValue) newProgress = maxValue; // Evita que pase el 100%
+            if (progressText && progressBar) {
+                progressText.textContent = `${project.collected}€ / ${project.goal}€`;
+                progressBar.style.width = `${(project.collected / project.goal) * 100}%`;
+            }
+        });
+    }
 
-            // Actualizar la barra de progreso
-            
-            progressBar.style.width = (newProgress / maxValue) * 100 + "%";
-        }
+    function saveProgressData(projects) {
+        localStorage.setItem("donationData", JSON.stringify(projects));
+    }
 
-        form.reset(); // Limpiar el campo de entrada
+    document.querySelectorAll(".form-donation").forEach(form => {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formId = this.id.replace("form-donation", "");
+            console.log(formId);
+            const input = document.getElementById(`quantity-donation${formId}`);
+            const donationValue = parseInt(input.value);
+
+            if (isNaN(donationValue) || donationValue <= 0) {
+                console.warn("Valor de donación inválido:", donationValue);
+                return;
+            }
+
+            // Obtener los datos actuales desde localStorage
+            let projects = JSON.parse(localStorage.getItem("donationData")) || [];
+            console.log(projects);
+
+            let project = projects.find(p => p.id === parseInt(formId));
+            if (project) {
+                project.collected += donationValue;
+            } else {
+                console.error("No se encontró el proyecto con ID:", formId);
+                return;
+            }
+
+            // Guardar en localStorage
+            saveProgressData(projects);
+
+            // Actualizar la interfaz
+            const progressText = document.getElementById(`progress-text${formId}`);
+            const progressBar = document.getElementById(`progress-bar${formId}`);
+            progressText.textContent = `${project.collected}€ / ${project.goal}€`;
+            progressBar.style.width = `${(project.collected / project.goal) * 100}%`;
+
+            input.value = ""; // Limpiar el campo
+        });
     });
+
+    // Cargar los datos al inicio
+    loadProgressData();
 });

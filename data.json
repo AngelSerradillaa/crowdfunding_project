@@ -1,0 +1,22 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "name": "Conquer!",
+        "collected": 0,
+        "goal": 1000
+      },
+      {
+        "id": 2,
+        "name": "Proyecto 2",
+        "collected": 0,
+        "goal": 1000
+      },
+      {
+        "id": 3,
+        "name": "Proyecto 3",
+        "collected": 0,
+        "goal": 1000
+      }
+    ]
+  }
