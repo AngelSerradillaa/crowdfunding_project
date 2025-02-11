@@ -3,6 +3,10 @@
     src: url(./src/fonts/Poppins-Regular.ttf);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     font-family: Poppins;
@@ -30,7 +34,12 @@ body{
     color: whitesmoke;
 }
 
-.navigation li:hover{
+.navigation a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.navigation a:hover{
     text-decoration: underline;
     color: orange;
     cursor: pointer;
@@ -138,18 +147,30 @@ body{
     overflow-y: scroll;
     scroll-behavior: smooth;
     scrollbar-gutter: stable both-edges;
+
+    h4 {
+      color: orange;
+    }
 }
 .p-container{
     background-color: white;
     padding: 20px 0px;
     border-top: 1px solid orange;
 }
+
 .progress-container {
     margin: 0px auto;
     background-color: white;
     max-width: 1000px;
     text-align: center;
   }
+
+.countdown-container {
+  font-size: 22px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 5px;
+}
   
   .progress {
     padding: 6px;
@@ -174,13 +195,8 @@ body{
           transparent 25%, transparent 50%, 
           rgb(252,163,17) 50%, rgb(252,163,17) 75%,
           transparent 75%, transparent); 
-    /*animation: progressAnimationStrike 6s;*/
   }
   
-  /*@keyframes progressAnimationStrike {
-       from { width: 0 }
-       to   { width: 100% }
-  }*/
   .progress-label {
     font-style: normal;
     font-weight: 400;

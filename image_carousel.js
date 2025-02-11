@@ -1,45 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", function () {
-    let currentIndex = 0;
-    const images = document.querySelectorAll(".carousel-item");
-    const indicators = document.querySelectorAll(".indicator");
-    const totalImages = images.length;
-    let interval;
-
-    function updateCarousel(index) {
-        // Elimina la clase activa de todas las imágenes e indicadores
-        images.forEach(img => img.classList.remove("active"));
-        indicators.forEach(ind => ind.classList.remove("active"));
-
-        // Activa la imagen e indicador correspondiente
-        images[index].classList.add("active");
-        indicators[index].classList.add("active");
-
-        // Actualiza el índice
-        currentIndex = index;
-    }
-
-    function nextImage() {
-        let nextIndex = (currentIndex + 1) % totalImages;
-        updateCarousel(nextIndex);
-    }
-
-    function startAutoSlide() {
-        interval = setInterval(nextImage, 2000);
-    }
-
-    // Agregar eventos a los indicadores
-    indicators.forEach(indicator => {
-        indicator.addEventListener("click", function () {
-            clearInterval(interval);
-            let index = parseInt(this.getAttribute("data-index"));
-            updateCarousel(index);
-            startAutoSlide();
-        });
-    });
-
-    // Iniciar el carrusel automático
-    startAutoSlide();
-});*/
 
 document.addEventListener("DOMContentLoaded", function () {
     const carousels = document.querySelectorAll(".carousel");
@@ -84,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function startAutoSlide() {
-            interval = setInterval(nextImage, 4000);
+            interval = setInterval(nextImage, 7000);
         }
 
         startAutoSlide();
