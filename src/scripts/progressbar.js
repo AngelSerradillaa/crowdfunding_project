@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         localStorage.setItem("donationData", JSON.stringify(projects));
     }
 
-    document.querySelectorAll(".form-donation").forEach(form => {
+    document.querySelectorAll(".project__container__form").forEach(form => {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 

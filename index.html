@@ -11,51 +11,61 @@
     <header class="header">
         <section>
             <nav class="navigation">
-                <div class="logo"><img src="./src/images/PF.png" alt="logo" width="50" height="50"></div>
-                <div class="nav-container">
+                <div class="navigation__logo"><img src="./src/images/PF.png" alt="logo" width="50" height="50"></div>
+                <div class="navigation__container">
                     
-                    <ul>
+                    <ul id="desktop-menu">
                         <li> <a href="#bloodOnTheSand">Blood on the Sands</a></li>
                         <li> <a href="#biomesOfNilgiris">Biomes of Nilgiris</a></li>
                         <li> <a href="#CrucibleAether">Crucible of Aether</a></li>
                         <li> <a href="#FAQ">Preguntas frecuentes</a></li>
                     </ul>
-                    <div class="button-container"> 
-                        <button class="btn-black">Iniciar Sesión</button>
-                        <button class="btn-black">Registrar</button>
+                    
+                    <div class="navigation__button-container"> 
+                        <button class="footer__container__subs__form__btn-black">Iniciar Sesión</button>
+                        <button class="footer__container__subs__form__btn-black">Registrar</button>
+                    </div>
+                    <div class="navigation__menu-container">
+                        <button id="menu-toggle">☰</button>
                     </div>
                 </div>
                 
+                
             </nav>
+            <ul id="mobile-menu">
+                <li> <a href="#bloodOnTheSand">Blood on the Sands</a></li>
+                <li> <a href="#biomesOfNilgiris">Biomes of Nilgiris</a></li>
+                <li> <a href="#CrucibleAether">Crucible of Aether</a></li>
+                <li> <a href="#FAQ">Preguntas frecuentes</a></li>
+            </ul>
         </section>
-        <section class="banner-home">
-            <div class="head-banner">
-                    <div class="banner-text">
-                        <h1 class="title-banner">Financia nuestros proyectos</h1>
-                        <p class="middle-subs">Aquí encontrarás un montón de juegos de mesa con futuro que necesitan financiación. 
+        <section class="banner">
+            <div class="banner__head">
+                    <div class="banner__head__text">
+                        <h1 class="banner__head__text__title">Financia nuestros proyectos</h1>
+                        <p class="banner__head__text__subs">Aquí encontrarás un montón de juegos de mesa con futuro que necesitan financiación. 
                             Ayúdalos a llegar a sus diversas metas y gana ventajas dependiendo de la cantidad aportada.</p>
                     </div>
-                    <div class="banner-img"><img src="./src/images/moneybox.png" alt="moneybox" width="300px" height="300px"></div>
+                    <div class="banner__head__img"><img src="./src/images/moneybox.png" alt="moneybox" width="300px" height="300px"></div>
                 
             </div>
         </section>
     </header>
     <main>
         <section>
-            <article class="article-project">
-                <div  class="project-container" id="bloodOnTheSand">
+            <article class="project">
+                <div  class="project__container" id="bloodOnTheSand">
                     <h2>Blood on the Sands</h2>
-                    <div class="project">
-                        <!--<img class="img-project" src="./src/images/proyecto1.jpg" alt="board game">-->
-                        <div class="carousel">
-                            <div class="carousel-images">
-                                <img src="./src/images/BloodOnTheSand1.png" class="carousel-item active">
-                                <img src="./src/images/BloodOnTheSand2.png" class="carousel-item">
-                                <img src="./src/images/BloodOnTheSand3.png" class="carousel-item">
+                    <div class="project__container__content">
+                        <div class="project__container__content__carousel">
+                            <div class="project__container__content__carousel__images">
+                                <img src="./src/images/BloodOnTheSand1.png" class="project__container__content__carousel__item active">
+                                <img src="./src/images/BloodOnTheSand2.png" class="project__container__content__carousel__item">
+                                <img src="./src/images/BloodOnTheSand3.png" class="project__container__content__carousel__item">
                             </div>
-                            <div class="carousel-indicators"></div>
+                            <div class="project__container__content__carousel__indicators"></div>
                         </div>
-                        <div class="project-text">
+                        <div class="project__container__content__text">
                             <h3>Un juego de mesa sobre el combate de gladiadores en la antigua Roma.</h3>
                             <p><b>Blood on the Sands</b> es un emocionante juego de escaramuzas inspirado en 
                                 la historia que transporta a los jugadores al brutal y arriesgado mundo del 
@@ -115,10 +125,10 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="p-container">
-                        <div class="progress-container">   
-                            <div class="countdown-container">
-                                <span id="countdown1" class="countdown-timer">Cargando...</span>
+                    <div class="project__container__progress">
+                        <div class="project__container__progress__content">   
+                            <div class="project__container__progress__content__countdown">
+                                <span id="countdown1" class="project__container__progress__content__countdown__timer">Cargando...</span>
                             </div> 
                             <div class="progress progress-striped">
                               <div class="progress-bar" id="progress-bar1">
@@ -130,46 +140,46 @@
                             </span>
                         </div>
                     </div>
-                    <div class="donation">
-                        <form action="" method="get" class="form-donation" id="form-donation1">
-                            <div class="personal-info">
+                    <div class="project__container__donation">
+                        <form action="" method="get" class="project__container__form" id="form-donation1">
+                            <div class="project__container__form__info">
                                 <label for="name">Nombre: </label>
-                                <input type="text" name="name" class="name-donation" required>
+                                <input type="text" name="name" class="project__container__form__info__name" required>
                                 <label for="email">Email: </label>
-                                <input type="text" name="email" class="email-donation" required>
+                                <input type="text" name="email" class="project__container__form__info__email" required>
                                 <label for="place">Dirección de envío: </label>
-                                <input type="text" name="place" class="place-donation" required>
+                                <input type="text" name="place" class="project__container__form__info__place" required>
                             </div>
-                            <div class="payment-info">
+                            <div class="project__container__form__payment">
                                 <label for="quantity">Cantidad a donar: </label>
-                                <input type="text" name="quantity" class="quantity-donation1" id="quantity-donation1" required>
+                                <input type="text" name="quantity" class="project__container__form__payment__quantity" id="quantity-donation1" required>
                                 <label for="payment">Método de pago: </label>
-                                <select name="payment" class="payment-donation">
+                                <select name="payment" class="project__container__form__payment__option">
                                     <option value="card">Tarjeta</option>
                                     <option value="paypal">Paypal</option>
                                     <option value="giftcard">Tarjeta de regalo</option>
                                 </select>
                             </div>
-                            <div class="btn-donation">
+                            <div class="project__container__form__donation-btn">
                                 <input type="submit" value="Proceder al pago">
                             </div>
                         </form>
                     </div>
                 </div>
             </article>
-            <article class="article-project">
-                <div  class="project-container" id="biomesOfNilgiris">
+            <article class="project">
+                <div  class="project__container" id="biomesOfNilgiris">
                     <h2>Biomes of Nilgiris</h2>
-                    <div class="project">
-                        <div class="carousel">
-                            <div class="carousel-images">
-                                <img src="./src/images/BiomesOfNilgris1.png" class="carousel-item active">
-                                <img src="./src/images/BiomesOfNilgris2.png" class="carousel-item">
-                                <img src="./src/images/BiomesOfNilgris3.gif" class="carousel-item">
+                    <div class="project__container__content">
+                        <div class="project__container__content__carousel">
+                            <div class="project__container__content__carousel__images">
+                                <img src="./src/images/BiomesOfNilgris1.png" class="project__container__content__carousel__item active">
+                                <img src="./src/images/BiomesOfNilgris2.png" class="project__container__content__carousel__item">
+                                <img src="./src/images/BiomesOfNilgris3.gif" class="project__container__content__carousel__item">
                             </div>
-                            <div class="carousel-indicators"></div>
+                            <div class="project__container__content__carousel__indicators"></div>
                         </div>
-                        <div class="project-text">
+                        <div class="project__container__content__text">
                             <h3>¡Embárcate en el viaje definitivo de la biodiversidad! </h3>
                             <p>Un juego en el que la naturaleza y la estrategia coinciden: descubre
                                 personajes únicos, especies endémicas y esfuerzos de conservaciones reales.
@@ -230,11 +240,11 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="p-container">
-                        <div class="progress-container">  
-                            <div class="countdown-container">
-                                <span id="countdown2" class="countdown-timer">Cargando...</span>
-                            </div>  
+                    <div class="project__container__progress">
+                        <div class="project__container__progress__content">   
+                            <div class="project__container__progress__content__countdown">
+                                <span id="countdown2" class="project__container__progress__content__countdown__timer">Cargando...</span>
+                            </div> 
                             <div class="progress progress-striped">
                               <div class="progress-bar" id="progress-bar2">
                               </div>             
@@ -245,46 +255,46 @@
                             </span>
                         </div>
                     </div>
-                    <div class="donation">
-                        <form action="" method="get" class="form-donation" id="form-donation2">
-                            <div class="personal-info">
+                    <div class="project__container__donation">
+                        <form action="" method="get" class="project__container__form" id="form-donation2">
+                            <div class="project__container__form__info">
                                 <label for="name">Nombre: </label>
-                                <input type="text" name="name" class="name-donation" required>
+                                <input type="text" name="name" class="project__container__form__info__name" required>
                                 <label for="email">Email: </label>
-                                <input type="text" name="email" class="email-donation" required>
+                                <input type="text" name="email" class="project__container__form__info__email" required>
                                 <label for="place">Dirección de envío: </label>
-                                <input type="text" name="place" class="place-donation" required>
+                                <input type="text" name="place" class="project__container__form__info__place" required>
                             </div>
-                            <div class="payment-info">
+                            <div class="project__container__form__payment">
                                 <label for="quantity">Cantidad a donar: </label>
-                                <input type="text" name="quantity" class="quantity-donation" id="quantity-donation2" required>
+                                <input type="text" name="quantity" class="project__container__form__payment__quantity" id="quantity-donation2" required>
                                 <label for="payment">Método de pago: </label>
-                                <select name="payment" class="payment-donation">
+                                <select name="payment" class="project__container__form__payment__option">
                                     <option value="card">Tarjeta</option>
                                     <option value="paypal">Paypal</option>
                                     <option value="giftcard">Tarjeta de regalo</option>
                                 </select>
                             </div>
-                            <div class="btn-donation">
+                            <div class="project__container__form__donation-btn">
                                 <input type="submit" value="Proceder al pago">
                             </div>
                         </form>
                     </div>
                 </div>
             </article>
-            <article class="article-project">
-                <div  class="project-container" id="CrucibleAether">
+            <article class="project">
+                <div  class="project__container" id="CrucibleAether">
                     <h2>Crucible of Aether: A Mystic-Industrial TTRPG</h2>
-                    <div class="project">
-                        <div class="carousel">
-                            <div class="carousel-images">
-                                <img src="./src/images/CrucibleAether1.png" class="carousel-item active">
-                                <img src="./src/images/CrucibleAether2.png" class="carousel-item">
-                                <img src="./src/images/CrucibleAether3.png" class="carousel-item">
+                    <div class="project__container__content">
+                        <div class="project__container__content__carousel">
+                            <div class="project__container__content__carousel__images">
+                                <img src="./src/images/CrucibleAether1.png" class="project__container__content__carousel__item active">
+                                <img src="./src/images/CrucibleAether2.png" class="project__container__content__carousel__item">
+                                <img src="./src/images/CrucibleAether3.png" class="project__container__content__carousel__item">
                             </div>
-                            <div class="carousel-indicators"></div>
+                            <div class="project__container__content__carousel__indicators"></div>
                         </div>
-                        <div class="project-text">
+                        <div class="project__container__content__text">
                             <h3>¡Explora un mundo tumultuoso de magia, industria y lo arcano en un juego donde forjas tu personaje a través de las habilidades que usas!</h3>
                             <p><b>Crucible of Aether</b> es un juego de rol de mesa que empodera a los jugadores, 
                                 donde las habilidades que usas moldean tu viaje. Descubre una creación y 
@@ -335,43 +345,42 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="p-container">
-                        <div class="progress-container"> 
-                            <div class="countdown-container">
-                                <span id="countdown3" class="countdown-timer">Cargando...</span>
-                            </div>   
+                    <div class="project__container__progress">
+                        <div class="project__container__progress__content">   
+                            <div class="project__container__progress__content__countdown">
+                                <span id="countdown3" class="project__container__progress__content__countdown__timer">Cargando...</span>
+                            </div> 
                             <div class="progress progress-striped">
-                            <div class="progress-bar" id="progress-bar3">
-                            </div>             
+                              <div class="progress-bar" id="progress-bar3">
+                              </div>             
                             </div> 
                             <span class="progress-label">Dinero aportado:</span>
                             <br>
                             <span class="progress-amount" id="progress-text3">0€ / 1000€<span class="countup" data-end-value="1000000" data-duration="1200"></span>
                             </span>
-                            
                         </div>
                     </div>
-                    <div class="donation">
-                        <form action="" method="get" class="form-donation" id="form-donation3">
-                            <div class="personal-info">
+                    <div class="project__container__donation">
+                        <form action="" method="get" class="project__container__form" id="form-donation3">
+                            <div class="project__container__form__info">
                                 <label for="name">Nombre: </label>
-                                <input type="text" name="name" class="name-donation" required>
+                                <input type="text" name="name" class="project__container__form__info__name" required>
                                 <label for="email">Email: </label>
-                                <input type="text" name="email" class="email-donation" required>
+                                <input type="text" name="email" class="project__container__form__info__email" required>
                                 <label for="place">Dirección de envío: </label>
-                                <input type="text" name="place" class="place-donation" required>
+                                <input type="text" name="place" class="project__container__form__info__place" required>
                             </div>
-                            <div class="payment-info">
+                            <div class="project__container__form__payment">
                                 <label for="quantity">Cantidad a donar: </label>
-                                <input type="text" name="quantity" class="quantity-donation" id="quantity-donation3" required>
+                                <input type="text" name="quantity" class="project__container__form__payment__quantity" id="quantity-donation3" required>
                                 <label for="payment">Método de pago: </label>
-                                <select name="payment" class="payment-donation">
+                                <select name="payment" class="project__container__form__payment__option">
                                     <option value="card">Tarjeta</option>
                                     <option value="paypal">Paypal</option>
                                     <option value="giftcard">Tarjeta de regalo</option>
                                 </select>
                             </div>
-                            <div class="btn-donation">
+                            <div class="project__container__form__donation-btn">
                                 <input type="submit" value="Proceder al pago">
                             </div>
                         </form>
@@ -380,36 +389,36 @@
             </article>
         </section>
         <section class="sectionFAQ">
-            <div class="containerFAQ" id="FAQ">
+            <div class="sectionFAQ__container" id="FAQ">
                 <h2>Preguntas frecuentes</h2>
-                <div class="accordion">
-                  <div class="accordion-item">
+                <div class="sectionFAQ__container__accordion">
+                  <div class="sectionFAQ__container__accordion__item">
                     <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">¿Qué es ProFund?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
+                    <div class="sectionFAQ__container__accordion__content">
                       <p>ProFund es un proyecto en el que podrás encontrar financiación para tus juegos de messa o financiar tus favoritos a cambio de recompensas según el dinero aportado.</p>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">¿ProFund se lleva dinero de la recaudación?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
+                  <div class="sectionFAQ__container__accordion__item">
+                    <button id="accordion-button-2" aria-expanded="false"><span class="sectionFAQ__container__accordion__item__title">¿ProFund se lleva dinero de la recaudación?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="sectionFAQ__container__accordion__content">
                       <p>Sí, ProFund se lleva un 5% de la recaudación total del proyecto, de algo tenemos que vivir &#128512 .</p>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">¿El pago es seguro?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
+                  <div class="sectionFAQ__container__accordion__item">
+                    <button id="accordion-button-3" aria-expanded="false"><span class="sectionFAQ__container__accordion__item__title">¿El pago es seguro?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="sectionFAQ__container__accordion__content">
                       <p>El pago al contribuir con un proyecto es seguro ya que está configurado con la plataforma de pago Stripe, una vez que la campaña se acabe, el dinero total (menos impuestos) le llegará a los creadores del proyecto.</p>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">¿Qué pasa si un proyecto no llega a la meta?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
+                  <div class="sectionFAQ__container__accordion__item">
+                    <button id="accordion-button-4" aria-expanded="false"><span class="sectionFAQ__container__accordion__item__title">¿Qué pasa si un proyecto no llega a la meta?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="sectionFAQ__container__accordion__content">
                       <p>El dinero será devuelto a todos los patrocinadores y se les notificará por email.</p>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">¿Qué requisitos tengo que tener para presentar mi juego de mesa como proyecto?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
+                  <div class="sectionFAQ__container__accordion__item">
+                    <button id="accordion-button-5" aria-expanded="false"><span class="sectionFAQ__container__accordion__item__title">¿Qué requisitos tengo que tener para presentar mi juego de mesa como proyecto?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="sectionFAQ__container__accordion__content">
                       <p>¡Ninguno! Si crees que tu juego de mesa es divertido y que hará disfrutar a muchos jugadores, os animamos a presentar vuestro proyecto sin ninguna duda. Rellenad los datos necesarios y, ¡buena suerte!</p>
                     </div>
                   </div>
@@ -418,20 +427,20 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="footer-container">
-            <div class="subs">
-                <h3 class="footer-title">ProFund</h3>
-                <p class="footer-subtitle">¡No te pierdas ninguna novedad!</p>
-                <form action="" method="get" class="foooter-form">
-                <input type="email" placeholder="Email" class="input-subs">
-                <input type="submit" value="Suscribirse" class="btn-black">
+        <div class="footer__container">
+            <div class="footer__container__subs">
+                <h3 class="footer__container__subs__title">ProFund</h3>
+                <p class="footer__container__subs__subtitle">¡No te pierdas ninguna novedad!</p>
+                <form action="" method="get" class="footer__container__subs__form">
+                    <input type="email" placeholder="Email" class="footer__container__subs__form__input-subs">
+                    <input type="submit" value="Suscribirse" class="footer__container__subs__form__btn-black">
                 </form>
             </div>
-            <div class="footer-links">
-                <a href="./privacy.html" target="_blank" class="footer-link">Política de privacidad</a>
-                <a href="./cookies.html" target="_blank" class="footer-link">Política de cookies</a>
-                <a href="./legal.html" target="_blank" class="footer-link">Aviso Legal</a>
-                <a href="./terms.html" target="_blank" class="footer-link">Términos y condiciones</a>
+            <div class="footer__container__links">
+                <a href="./privacy.html" target="_blank" class="footer__container__links__link">Política de privacidad</a>
+                <a href="./cookies.html" target="_blank" class="footer__container__links__link">Política de cookies</a>
+                <a href="./legal.html" target="_blank" class="footer__container__links__link">Aviso Legal</a>
+                <a href="./terms.html" target="_blank" class="footer__container__links__link">Términos y condiciones</a>
             </div>
         </div>
     </footer>

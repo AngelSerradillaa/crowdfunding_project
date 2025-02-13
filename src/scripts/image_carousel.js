@@ -1,10 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const carousels = document.querySelectorAll(".carousel");
+    const carousels = document.querySelectorAll(".project__container__content__carousel");
 
     carousels.forEach((carousel, index) => {
-        const images = carousel.querySelectorAll(".carousel-item");
-        const indicatorsContainer = carousel.querySelector(".carousel-indicators");
+        const images = carousel.querySelectorAll(".project__container__content__carousel__item");
+        const indicatorsContainer = carousel.querySelector(".project__container__content__carousel__indicators");
         let currentIndex = 0;
         let interval;
 

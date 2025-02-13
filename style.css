@@ -13,7 +13,7 @@ body{
     background-color: rgb(255, 243, 222);
 }
 
-
+/* BARRA DE NAVEGACIÓN */
 .navigation {
   height: 70px;
   background: #262626;
@@ -24,29 +24,28 @@ body{
   display: flex;
   flex-direction: row;
   z-index: 100;
-}
 
-.navigation ul{
+  ul{
     display: flex;
     flex-direction: row;
     gap: 3vw;
     list-style: none;
     color: whitesmoke;
+  }
+  a{
+    color: whitesmoke;
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+      color: orange;
+      cursor: pointer;
+      transition: all .5s;
+    }
+  }
 }
 
-.navigation a{
-  color: whitesmoke;
-  text-decoration: none;
-}
-
-.navigation a:hover{
-    text-decoration: underline;
-    color: orange;
-    cursor: pointer;
-    transition: all .5s;
-}
-
-.nav-container{
+.navigation__container{
     display: flex;
     flex-direction: row;
     justify-content: end;
@@ -56,25 +55,27 @@ body{
     gap: 6vw;
 }
 
-.button-container{
+.navigation__button-container{
     margin-right: 15px;
 }
 
-.logo{
+.navigation__logo{
     padding-left: 12px;
     padding-top: 12px;
 }
-.button-container{
+.navigation__button-container{
     padding: 20px;
     margin-left: 2vw;
 }
 
-.banner-home{
+/*BANNER HEADER */
+
+.banner{
     margin-top: 70px;
     background: linear-gradient(90deg, rgba(255,163,0,1) 0%, rgba(255,184,0,1) 45%, rgba(255,248,0,1) 100%);
 }
 
-.head-banner{
+.banner__head{
     display: flex;
     max-width: 940px;
     margin-left: auto;
@@ -83,22 +84,22 @@ body{
     padding-bottom: 40px;
 }
 
-.banner-text{
+.banner__head__text{
     width: 50%;
 }
-.banner-img{
+.banner__head__img{
     width: 50%;
     padding-left: 70px;
     display: flex;
     justify-content: center;
 }
-.title-banner{
+.banner__head__text__title{
     font-weight: 800;
     font-size: 2.4em;
     color: whitesmoke;
     text-shadow: 3px 2px 2px rgba(0,0,0,0.25);
 }
-.middle-subs{
+.banner__head__text__subs{
     font-weight: 560;
     font-size: 1.1em;
     text-shadow: 3px 2px 2px rgba(0,0,0,0.15);
@@ -106,24 +107,25 @@ body{
 
 /*ARTICLES DE LOS PROYECTOS */
 
-.article-project{
+.project{
     display: flex;
     justify-content: center;
 }
 
-.project-container{
-    max-width: 1200px;
+.project__container{
+    max-width: 80%;
     margin-top: 40px;
+
+    h2{
+      padding-left: 1em;
+      padding-bottom: 0.5em;
+      padding-top: 0.5em;
+      margin: auto;
+  
+    }
 }
 
-.project-container h2{
-    padding-left: 1em;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-    margin: auto;
-
-}
-.project{
+.project__container__content{
     
     border-radius: 15px 0px 0px 0px;
     display: flex;
@@ -132,13 +134,61 @@ body{
     box-shadow: 1px 1px 7px 7px rgba(0,0,0,0.1);
     max-height: 500px;
 }
-.img-project{
-    width: 50%;
-    display: flex;
-    border-radius: 11px 0px 0px 0px;
-    box-shadow: 6px 0px 5px -3px rgba(0,0,0,0.1);
+
+.project__container__content__carousel {
+  position: relative;
+  display: flex;
+  border-radius: 11px 0px 0px 0px;
+  box-shadow: 6px 0px 5px -3px rgba(0,0,0,0.1);
 }
-.project-text{
+
+.project__container__content__carousel__images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.project__container__content__carousel__item {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.project__container__content__carousel__item.active {
+  display: block;
+}
+
+/* Indicadores (círculos) */
+.project__container__content__carousel__indicators {
+  position: absolute;
+  bottom: 3%;
+  left: 40%;
+  display: flex;
+  gap: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.indicator {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(148, 147, 147, 0.8);
+  border: 2px solid white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 50%;
+  outline: none;
+
+  
+}
+.indicator.active {
+  background-color: orange;
+  transform: scale(1.3); /* Hace que el activo sea más grande */
+  border-radius: 50%;
+  outline: none;
+}
+
+.project__container__content__text{
     width: 50%;
     padding-left: 1em;
     padding-bottom: 0.5em;
@@ -152,20 +202,20 @@ body{
       color: orange;
     }
 }
-.p-container{
+.project__container__progress{
     background-color: white;
     padding: 20px 0px;
     border-top: 1px solid orange;
 }
 
-.progress-container {
+.project__container__progress__content {
     margin: 0px auto;
     background-color: white;
     max-width: 1000px;
     text-align: center;
   }
 
-.countdown-container {
+.project__container__progress__content__countdown {
   font-size: 22px;
   font-weight: bold;
   color: orange;
@@ -176,6 +226,7 @@ body{
     padding: 6px;
     background: rgba(0, 0, 0, 0.25);
     border-radius: 6px;
+    margin: 0 10%;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
   }
   
@@ -215,71 +266,71 @@ body{
     margin: 20px auto;
   }
 
-.donation{
+.project__container__donation{
     
     border-top: 0px;
     border-radius: 0px 0px 15px 15px;
     background-color: white;
     display: flex;
-    max-width: 1200px;
     margin-bottom: 20px;
     box-shadow: 0px 11px 9px 6px rgba(0, 0, 0, 0.1);
 }
-.form-donation{
+.project__container__form{
     width: 100%;
     display: flex;
     gap: 20%;
     flex-wrap: wrap;
     padding: 10px 20px;
 }
-.personal-info{
+.project__container__form__info{
     width: 30%;
     display: flex;
     gap: 10px;
     flex-direction: column;
 }
-.payment-info{
+.project__container__form__payment{
     width: 20%;
     display: flex;
     gap: 10px;
     flex-direction: column;
 }
-.payment-donation{
+.project__container__form__payment__option{
     padding: 5px 2px;
     max-width: 150px;
 }
-.btn-donation{
+.project__container__form__donation-btn{
     flex: 0 1 100%;
     padding-top: 20px;
     padding-bottom: 10px;
+
+    input{
+      font-family: Poppins;
+      background-color: orange;
+      padding: 8px 8px;
+      border: none;
+      transition: all .5s;
+      border-radius: 5px;
+
+      &:hover{
+        background-color: #262626;
+        color: white;
+        cursor:pointer;
+      }
+  }
 }
 
-.btn-donation input{
-    font-family: Poppins;
-    background-color: orange;
-    padding: 8px 8px;
-    border: none;
-    transition: all .5s;
-    border-radius: 5px;
-}
-
-.btn-donation input:hover{
-    background-color: #262626;
-    color: white;
-    cursor:pointer;
-}
 .sectionFAQ {
     background-color: white;
     margin-top: 30px;
 }
-.containerFAQ {
+.sectionFAQ__container {
     margin: 0 auto;
     padding: 4rem;
     width: 48rem;
   }
   
-  .accordion {
-    .accordion-item {
+  .sectionFAQ__container__accordion {
+    .sectionFAQ__container__accordion__item {
       border-bottom: 1px solid lightgray;
       button[aria-expanded='true'] {
         border-bottom: 1px solid orange;
@@ -306,7 +357,7 @@ body{
           border: 1px solid orange;
         }
       }
-      .accordion-title {
+      .sectionFAQ__container__accordion__item__title {
         padding: 1em 1.5em 1em 0;
       }
       .icon {
@@ -347,14 +398,14 @@ body{
           width: 0;
         }
       }
-      + .accordion-content {
+      + .sectionFAQ__container__accordion__content {
         opacity: 1;
         max-height: 9em;
         transition: all 200ms linear;
         will-change: opacity, max-height;
       }
     }
-    .accordion-content {
+    .sectionFAQ__container__accordion__content {
       opacity: 0;
       max-height: 0;
       overflow: hidden;
@@ -373,7 +424,7 @@ body{
     background-color: #262626;
 }
 
-.footer-container{
+.footer__container{
     display: flex;
     justify-items: center;
     flex-wrap: wrap;
@@ -381,113 +432,198 @@ body{
     gap: 50%;
 }
 
-.footer-title{
+.footer__container__subs__title{
     color: orange;
     text-shadow: 3px 2px 2px rgba(0,0,0,0.25);
     font-size: 1.5em;
     margin: auto;
 }
-.footer-subtitle{
+.footer__container__subs__subtitle{
     color: white;
 }
 
-.btn-black{
+.footer__container__subs__form__btn-black{
     font-family: Poppins;
     background-color: orange;
     padding: 4px 8px;
     border: none;
     transition: all .5s;
 
-}
-.btn-black:hover{
-    background-color: white;
-    color: orange;
-    cursor:pointer;
+    &:hover{
+      background-color: white;
+      color: orange;
+      cursor:pointer;
+  }
+
 }
 
-.input-subs{
+.footer__container__subs__form__input-subs{
     padding: 6.1px 0px;
     padding-left: 6px;
     float: left;
     border: none;
 }
 
-.footer-links{
+.footer__container__links{
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.footer-link{
+.footer__container__links__link{
     color: white;
     text-decoration: none;
-}
-.footer-link:hover{
-    color: orange;
-    text-decoration: underline;
-    transition: all .5s;
+
+    &:hover{
+      color: orange;
+      text-decoration: underline;
+      transition: all .5s;
+  }
 }
 
-.carousel {
-    /*position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 50%;
-    height: 100%;
-    border-radius: 11px 0px 0px 0px;
-    box-shadow: 6px 0px 5px -3px rgba(0,0,0,0.1);*/
-    position: relative;
-    width: 65%;
-    display: flex;
-    border-radius: 11px 0px 0px 0px;
-    box-shadow: 6px 0px 5px -3px rgba(0,0,0,0.1);
+#mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #262626;
+  position: fixed;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 99;
+  border-top: 1px solid orange;
 }
 
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+#mobile-menu li {
+  list-style: none;
+  padding: 10px 0;
 }
 
-.carousel-item {
-    /*width: 800px;
-    height: 400px;
-    display: none;*/
+#mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+#mobile-menu a:hover {
+  color: orange;
+}
+
+/* Botón de menú hamburguesa */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 3px;
+}
+
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+
+  .banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+  .banner__head__text, .banner__head__img {
+      width: 100%;
+      padding: 0;
+  }
+
+  .project__container{
+    text-align: center;
+  }
+  .project__container__content {
+      flex-direction: column;
+      max-height: fit-content;
+  }
+  .project__container__content__carousel__images{
     width: 100%;
-    height: 100%;
-    display: none;
+  
+  }
+  
+  .img-project, .project__container__content__text {
+      width: fit-content;
+      padding: 10px;
+      box-shadow: none;
+  }
+
+  .project__container__content__text{
+    height: 400px;
+  }
+  .project__container__donation {
+      flex-direction: column;
+      padding: 10px;
+  }
+  .project__container__form {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+  }
+  .project__container__form__info, .project__container__form__payment {
+      width: 50%;
+      text-align: center;
+  }
+  .project__container__form__payment__option{
+      margin: auto;
+  }
+  .sectionFAQ__container{
+    width: 75%;
+  }
+  .footer__container{
+    gap: 35%;
+  }
 }
 
-.carousel-item.active {
-    display: block;
+/* Móviles (hasta 767px) */
+@media screen and (max-width: 767px) {
+
+  #desktop-menu {
+    display: none; /* Oculta el menú normal */
+  }
+
+  #menu-toggle {
+    display: block; /* Muestra el botón */
+  }
+  .banner__head {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+  .banner__head__text, .banner__head__img {
+      width: 100%;
+      padding: 0;
+  }
+  .banner__head__text__title {
+      font-size: 1.8em;
+  }
+  .project__container__content {
+      flex-direction: column;
+  }
+  .img-project, .project__container__content__text {
+      width: 100%;
+      padding: 10px;
+  }
+  .project__container__donation {
+      flex-direction: column;
+      padding: 10px;
+  }
+  .project__container__form {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer__container {
+      flex-direction: column;
+      text-align: center;
+  }
+  .footer__container__subs__form__input-subs{
+    float: none;
+  }
 }
 
-/* Indicadores (círculos) */
-.carousel-indicators {
-    position: absolute;
-    bottom: 3%;
-    left: 40%;
-    display: flex;
-    gap: 25px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.indicator {
-    width: 15px;
-    height: 15px;
-    background-color: rgba(148, 147, 147, 0.8);
-    border: 2px solid white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-    transition: background 0.3s ease, transform 0.2s ease;
-    border-radius: 50%;
-    outline: none;
-
-    
-}
-.indicator.active {
-    background-color: orange;
-    transform: scale(1.3); /* Hace que el activo sea más grande */
-    border-radius: 50%;
-    outline: none;
-}
