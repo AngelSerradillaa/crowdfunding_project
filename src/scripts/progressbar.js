@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             progressBar.style.width = `${(project.collected / project.goal) * 100}%`;
 
             input.value = ""; // Limpiar el campo
+            form.reset();
         });
     });
 
